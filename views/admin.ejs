@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Admin</title>
+  <link rel="stylesheet" href="/stylesheets/output.css" />
+</head>
+
+<body class="bg-gray-800 min-h-screen">
+
+  <nav class="bg-white shadow-md px-6 py-4 flex items-center justify-between">
+    <div>
+      <a href="/"
+        class="text-white bg-gray-800 hover:bg-gray-700 font-medium px-4 py-2 rounded-md transition duration-300">
+        Home
+      </a>
+    </div>
+  </nav>
+  
+  <div class="flex justify-center items-center ">
+    <form action="/admin" method="post" class="bg-white p-6 max-w-lg w-full my-16 rounded-2xl">
+      <h1 class="font-bold text-3xl text-center">Admin Login</h1>
+      <hr class="border-gray-600 my-3">
+
+      <% if(error.length> 0){ %>
+        <p class="text-center">
+          <%= error %>
+        </p>
+        <% } %>
+
+          <div class="my-3">
+            <label class="block text-lg font-medium text-gray-900">Username</label>
+            <input type="text" name="username" placeholder="Enter username" required
+              class="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800">
+          </div>
+
+          <div class="my-3">
+            <label class="block text-lg font-medium text-gray-900">Password</label>
+            <input type="password" name="password" placeholder="Password" required
+              class="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800">
+          </div>
+
+          <div class="text-center my-6">
+            <button type="submit"
+              class="bg-gray-800 text-white hover:bg-gray-700 font-semibold py-2 px-6 rounded-md cursor-pointer">
+              Login
+            </button>
+          </div>
+
+    </form>
+  </div>
+</body>
+
+</html>
