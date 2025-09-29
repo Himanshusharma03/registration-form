@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "tailwind": "npx @tailwindcss/cli -i ./public/stylesheets/input.css -o ./public/stylesheets/output.css --watch",
-    "start": "nodemon ./bin/www & npm run tailwind"
+    "start": "nodemon app.js & npm run tailwind"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.8",
