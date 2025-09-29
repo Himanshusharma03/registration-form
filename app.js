@@ -5,10 +5,14 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const expressSession = require("express-session");
 const flash = require("connect-flash");
+const dotenv = require("dotenv").config();
+const mongoose = require("mongoose");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+const { log } = require("console");
 
+const PORT = process.env.PORT || 5000;
 var app = express();
 
 app.set("views", path.join(__dirname, "views"));
@@ -43,5 +47,17 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
+mongoose
+  .connect(process.env.mongoURL)
+  .then(() => {
+    console.log("Connected to Database");
+    app.listen(PORT, () => {
+      console.log(`Server is running on http://localhost:${PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.log("Error connecting to MongoDB:", error);
+  });
 
 module.exports = app;

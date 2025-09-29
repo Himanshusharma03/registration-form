@@ -33,6 +33,7 @@
       <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Edit User (<%= users.name %>)</h2>
       <hr class="border-gray-500 mb-6">
 
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
       <div class="mb-4">
         <label class="block text-lg font-medium text-gray-900">Name</label>
         <input type="text" name="name" placeholder="Enter your name" value="<%= users.name %>" disabled
@@ -51,80 +52,79 @@
           class="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800" />
       </div>
 
-      <div class="mb-4">
-        <label class="block text-lg font-medium text-gray-900">Address</label>
-        <textarea name="address" rows="3" placeholder="Enter your address" required
-          class="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800"><%= users.address %></textarea>
-      </div>
-
       <div class="mb-6">
         <label class="block text-lg font-medium text-gray-900">Date of Birth</label>
         <input type="date" name="dob" value="<%= users.dob ? users.dob.toISOString().split('T')[0] : '' %>"
           class="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800" />
       </div>
+  </div>
 
-      <div class="mb-6">
-        <h3 class="text-lg font-semibold text-gray-900 mb-2">Education Details</h3>
-        <div class="space-y-6 border p-4 rounded-md border-gray-300 bg-gray-100">
+  <div class="mb-4">
+    <label class="block text-lg font-medium text-gray-900">Address</label>
+    <textarea name="address" rows="3" placeholder="Enter your address" required
+      class="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800"><%= users.address %></textarea>
+  </div>
 
-          <div>
-            <h4 class="font-medium text-gray-900 mb-2">10th Details</h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <input type="number" name="tenth_year" placeholder="Passout Year"
-                value="<%= users.education.tenth.year %>"
-                class="p-2 border border-gray-300 bg-white rounded-md w-full" />
-              <input type="text" name="tenth_percentage" placeholder="Percentage"
-                value="<%= users.education.twelth.percentage %>"
-                class="p-2 border bg-white border-gray-300 rounded-md w-full" />
-            </div>
-          </div>
+  <div class="mb-6">
+    <h3 class="text-lg font-semibold text-gray-900 mb-2">Education Details</h3>
+    <div class="space-y-6 border p-4 rounded-md border-gray-300 bg-gray-100">
 
-          <div>
-            <h4 class="font-medium text-gray-900 mb-2">12th Details</h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <input type="number" name="twelth_year" placeholder="Passout Year"
-                value="<%= users.education.twelth.year %>"
-                class="p-2 border bg-white border-gray-300 rounded-md w-full" />
-              <input type="text" name="twelth_percentage" placeholder="Percentage"
-                value="<%= users.education.twelth.percentage %>"
-                class="p-2 border bg-white border-gray-300 rounded-md w-full" />
-            </div>
-          </div>
-
-          <div>
-            <h4 class="font-medium text-gray-900 mb-2">Graduation Details</h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <input type="number" name="graduation_year" placeholder="Passout Year"
-                value="<%= users.education.graduation.year %>"
-                class="p-2 border bg-white border-gray-300 rounded-md w-full" />
-              <input type="text" name="graduation_percentage" placeholder="Percentage"
-                value="<%= users.education.graduation.percentage %>"
-                class="p-2 border bg-white border-gray-300 rounded-md w-full" />
-            </div>
-          </div>
-
-          <div>
-            <h4 class="font-medium text-gray-900 mb-2">Postgraduation Details (Optional)</h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <input type="number" name="postgraduation_year" placeholder="Passout Year"
-                value="<%= users.education.postgraduation.year %>"
-                class="p-2 border bg-white border-gray-300 rounded-md w-full" />
-              <input type="text" name="postgraduation_percentage" placeholder="Percentage"
-                value="<%= users.education.postgraduation.percentage %>"
-                class="p-2 border bg-white border-gray-300 rounded-md w-full" />
-            </div>
-          </div>
-
+      <div>
+        <h4 class="font-medium text-gray-900 mb-2">10th Details</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <input type="number" name="tenth_year" placeholder="Passout Year" value="<%= users.education.tenth.year %>"
+            class="p-2 border border-gray-300 bg-white rounded-md w-full" />
+          <input type="text" name="tenth_percentage" placeholder="Percentage"
+            value="<%= users.education.twelth.percentage %>"
+            class="p-2 border bg-white border-gray-300 rounded-md w-full" />
         </div>
       </div>
 
-      <div class="text-center">
-        <input type="submit" value="Update"
-          class="bg-gray-800 text-white font-semibold py-2 px-6 rounded-md hover:bg-gray-700 transition duration-300">
-        </input>
-
+      <div>
+        <h4 class="font-medium text-gray-900 mb-2">12th Details</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <input type="number" name="twelth_year" placeholder="Passout Year" value="<%= users.education.twelth.year %>"
+            class="p-2 border bg-white border-gray-300 rounded-md w-full" />
+          <input type="text" name="twelth_percentage" placeholder="Percentage"
+            value="<%= users.education.twelth.percentage %>"
+            class="p-2 border bg-white border-gray-300 rounded-md w-full" />
+        </div>
       </div>
-    </form>
+
+      <div>
+        <h4 class="font-medium text-gray-900 mb-2">Graduation Details</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <input type="number" name="graduation_year" placeholder="Passout Year"
+            value="<%= users.education.graduation.year %>"
+            class="p-2 border bg-white border-gray-300 rounded-md w-full" />
+          <input type="text" name="graduation_percentage" placeholder="Percentage"
+            value="<%= users.education.graduation.percentage %>"
+            class="p-2 border bg-white border-gray-300 rounded-md w-full" />
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-medium text-gray-900 mb-2">Postgraduation Details (Optional)</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <input type="number" name="postgraduation_year" placeholder="Passout Year"
+            value="<%= users.education.postgraduation.year %>"
+            class="p-2 border bg-white border-gray-300 rounded-md w-full" />
+          <input type="text" name="postgraduation_percentage" placeholder="Percentage"
+            value="<%= users.education.postgraduation.percentage %>"
+            class="p-2 border bg-white border-gray-300 rounded-md w-full" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="text-center">
+    <input type="submit" value="Update"
+      class="bg-gray-800 text-white font-semibold py-2 px-6 rounded-md hover:bg-gray-700 transition duration-300">
+    </input>
+
+  </div>
+  </form>
   </div>
 </body>
 

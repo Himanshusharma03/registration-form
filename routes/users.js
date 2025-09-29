@@ -1,7 +1,5 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb+srv://himanshu:Himanshu0103@mongodb.x5em1ta.mongodb.net/?retryWrites=true&w=majority&appName=MongoDB");
-
 const registrationSchema = new mongoose.Schema(
   {
     name: {
